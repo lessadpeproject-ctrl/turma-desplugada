@@ -91,6 +91,12 @@ footer{font-size:13px;color:var(--ink-soft);padding-block:24px;text-align:center
 @media (max-width:420px){.sheets{height:300px}.years{grid-template-columns:repeat(2,1fr)}.btn{font-size:18px;padding:14px 22px}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
+<!-- Meta Pixel: Turma Desplugada -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1626811735654417');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Kit Computação Desplugada 2027',value:19.90,currency:'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1626811735654417&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -102,8 +108,7 @@ footer{font-size:13px;color:var(--ink-soft);padding-block:24px;text-align:center
       <h1>Computação da BNCC, <span>sem computador.</span></h1>
       <p class="lead">30 aulas prontas para a Educação Infantil e do 1º ao 5º ano. Você imprime, aplica e já entra em 2027 com o planejamento feito.</p>
       <div class="price"><strong>R$ 19,90</strong><small>pagamento único · acesso imediato</small></div>
-      <!-- TROCAR pelo link do checkout da Kiwify -->
-      <a class="btn" href="#comprar" id="cta-hero">Quero o kit completo →</a>
+            <a class="btn" href="#comprar" id="cta-hero">Quero o kit completo →</a>
       <p style="margin-top:14px;font-size:14px;opacity:.8">PDF para baixar e imprimir · 7 dias de garantia</p>
     </div>
     <div class="sheets" aria-hidden="true">
@@ -212,10 +217,20 @@ footer{font-size:13px;color:var(--ink-soft);padding-block:24px;text-align:center
   <div class="wrap">
     <h2>Comece 2027 com o planejamento pronto</h2>
     <div class="price" style="justify-content:center"><strong>R$ 19,90</strong><small>pagamento único</small></div>
-    <!-- TROCAR pelo link do checkout da Kiwify -->
-    <a class="btn" href="#comprar" id="cta-final">Quero o kit completo →</a>
+        <a class="btn" href="#comprar" id="cta-final">Quero o kit completo →</a>
   </div>
 </section>
 <footer><div class="wrap">Turma Desplugada · Kit Computação Desplugada 2027</div></footer>
+<script>
+// Link do checkout da Wiapy (preencher quando a Wiapy liberar). Os parâmetros UTM do anúncio são repassados ao checkout.
+var CHECKOUT_URL = '';
+(function(){
+  var qs = location.search;
+  document.querySelectorAll('#cta-hero,#cta-final').forEach(function(a){
+    if (CHECKOUT_URL) a.href = CHECKOUT_URL + (qs ? (CHECKOUT_URL.indexOf('?')>-1 ? '&' : '?') + qs.slice(1) : '');
+    a.addEventListener('click', function(){ if (window.fbq) fbq('track','InitiateCheckout',{value:19.90,currency:'BRL'}); });
+  });
+})();
+</script>
 </body>
 </html>
